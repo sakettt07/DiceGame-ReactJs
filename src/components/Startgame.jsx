@@ -1,44 +1,20 @@
-import styled from "styled-components";
-import { Button } from "../styled/Button";
+
 import Rolldice from "../rolldice.json";
 import Lottie from "lottie-react";
-import "../components/Startgame.css";
+
 const StartGame = ({ toggle }) => {
   return (
-    <Container className="forall">
-      <div className="frontimg">
-        <Lottie className="rolling" animationData={Rolldice} />
+    <div className=" w-full h-screen bg-gradient-to-tr from-slate-700 via-zinc-500 to-zinc-900 grid grid-cols-1 md:grid-cols-2">
+      <div className="p-20">
+        <Lottie className="md:w-[89%]" animationData={Rolldice} />
       </div>
-      <div className="content">
-        <h1>DICE GAME</h1>
-        <Button onClick={toggle}>Play Now</Button>
+      <div className="md:p-20 flex flex-col md:pt-52 items-center">
+        <h1 className="text-center md:mt-0 mt-[-10rem] md:pr-10 text-[13vw] md:text-[6.9vw] font-semibold whitespace-nowrap">DICE🎲<span className="text-white">GAME</span></h1>
+        <button className="ml-1 mt-5 bg-black p-4 md:p-7 rounded-md md:text-[2vw] px-16 hover:bg-white text-white hover:text-black" onClick={toggle}>Play Now</button>
       </div>
-    </Container>
+    </div>
   );
 };
 
 export default StartGame;
 
-const Container = styled.div`
-  /* max-width: 1180px; */
-  height: 100%;
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-
-  .content h1 {
-    font-size: 100px;
-    white-space: nowrap;
-    margin-bottom: 16px;
-    margin-top: -13px;
-    position: relative;
-  }
-  /* .frontimg{
-  position: relative;
-  margin-left: 70px;
-  margin-top: 108px;
-} */
-  /* .content BUTTON{
-  position: relative;
-} */
-`;
