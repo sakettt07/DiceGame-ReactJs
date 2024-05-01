@@ -1,9 +1,7 @@
-import styled from "styled-components";
 import Numberselector from "./Numberselector";
 import Score from "./Score";
 import Rolldice from "./Rolldice";
 import { useState } from "react";
-import { Button, OutlineButton } from "../styled/Button";
 import Rules from "./Rules";
 
 const Mainscreen = () => {
@@ -35,8 +33,8 @@ const Mainscreen = () => {
     setscore(0);
   };
   return (
-    <Maincont>
-      <div className="maincont">
+    <div className="bg-gradient-to-b from-gray-50 via-gray-400 to-sky-800 min-h-screen">
+      <div className="maincont  flex justify-between px-10 py-6 items-center">
         <Score score={score} />
         <Numberselector
           error={error}
@@ -46,35 +44,22 @@ const Mainscreen = () => {
         />
       </div>
       <Rolldice dice={dice} rolldice={rolldice} />
-      <div className="btns">
-        <OutlineButton onClick={resetScore}>Reset Score</OutlineButton>
-        <Button onClick={() => setShowRules((prev) => !prev)}>
+      <div className="btns flex w-full p-5 justify-center gap-7">
+        <button
+          className=" bg-black p-4 md:px-4 md:py-3 rounded-md md:text-[2vw] px-16 hover:bg-white text-white hover:text-black"
+          onClick={resetScore}
+        >
+          Reset Score
+        </button>
+        <button className=" bg-black p-4 md:px-4 md:py-3 rounded-md md:text-[2vw] px-16 hover:bg-white text-white hover:text-black" onClick={() => setShowRules((prev) => !prev)}>
           {showRules ? "Hide" : "Show"} Rules
-        </Button>
+        </button>
       </div>
 
       {showRules && <Rules />}
-    </Maincont>
+    </div>
   );
 };
 
 export default Mainscreen;
 
-const Maincont = styled.main`
-  padding-top: 70px;
-  .maincont {
-    display: flex;
-    justify-content: space-around;
-    align-items: end;
-  }
-  .btns {
-    margin-top: -7px;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-left: -85px;
-  }
-`;

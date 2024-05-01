@@ -2,27 +2,17 @@ import styled from "styled-components";
 
 function Rolldice({ rolldice, dice }) {
   return (
-    <Dicecont>
-      <div className="dice" onClick={rolldice}>
-        <img src={`/images/dice/dice_${dice}.png`} alt="dice 1"></img>
+    <div className="flex items-center flex-col mt-[-30px]">
+      <div className="dice  cursor-pointer" onClick={rolldice}>
+        <img className="w-32 md:w-52" src={`/images/dice/dice_${dice}.png`} alt="dice 1"></img>
       </div>
-      <p>Click on Dice to roll</p>
-    </Dicecont>
+      <p className="text-[1rem] md:text-[2rem] font-semibold">Click on Dice to roll</p>
+    </div>
   );
 }
 
 export default Rolldice;
 const Dicecont = styled.div`
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .dice {
-    cursor: pointer;
-  }
-  .dice img {
-    margin-top: -53px;
-  }
   p {
     font-size: 20px;
     font-weight: 700;

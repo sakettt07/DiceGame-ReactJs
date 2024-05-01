@@ -7,11 +7,11 @@ function Numberselector({ seterror, error, selectednum, setselectednum }) {
   };
 
   return (
-    <Numberselectors>
-      <p className="error">{error}</p>
-      <div className="numbers">
+    <div className=" p-4">
+      <p className="error text-center text-[1.6rem] text-red-800">{error}</p>
+      <div className="numbers md:flex-row md:flex flex-col">
         {array.map((value, i) => (
-          <Box
+          <Box className=" cursor-pointer hover:scale-110"
             isselected={value === selectednum}
             key={i}
             onClick={() => numberselectorhandler(value)}
@@ -20,33 +20,12 @@ function Numberselector({ seterror, error, selectednum, setselectednum }) {
           </Box>
         ))}
       </div>
-      <p>Select a Number</p>
-    </Numberselectors>
+      <p className="text-[2.3vw] text-center font-semibold">Select a Number</p>
+    </div>
   );
 }
 
 export default Numberselector;
-
-const Numberselectors = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  .numbers {
-    display: flex;
-    gap: 24px;
-    margin-top: -40px;
-    margin-right: -100px;
-  }
-  p {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  .error {
-    color: red;
-    margin-top: 13px;
-    margin-bottom: 44px;
-  }
-`;
 const Box = styled.div`
   height: 72px;
   width: 72px;
