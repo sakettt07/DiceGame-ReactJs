@@ -34,7 +34,7 @@ const Mainscreen = () => {
   };
   return (
     <div className="bg-gradient-to-b from-gray-50 via-gray-400 to-sky-800 min-h-screen">
-      <div className="maincont  flex justify-between px-10 py-6 items-center">
+      <div className="maincont md:flex justify-between px-10 py-6 items-center">
         <Score score={score} />
         <Numberselector
           error={error}
@@ -44,14 +44,14 @@ const Mainscreen = () => {
         />
       </div>
       <Rolldice dice={dice} rolldice={rolldice} />
-      <div className="btns flex w-full p-5 justify-center gap-7">
+      <div className="btns flex w-full p-6 md:p-5 justify-center md:gap-7 gap-4">
         <button
-          className=" bg-black p-4 md:px-4 md:py-3 rounded-md md:text-[2vw] px-16 hover:bg-white text-white hover:text-black"
+          className=" bg-black p-3 md:px-4 md:py-3 rounded-md text-[5vw] md:text-[2vw] px-8 hover:bg-white text-white hover:text-black"
           onClick={resetScore}
         >
           Reset Score
         </button>
-        <button className=" bg-black p-4 md:px-4 md:py-3 rounded-md md:text-[2vw] px-16 hover:bg-white text-white hover:text-black" onClick={() => setShowRules((prev) => !prev)}>
+        <button className=" bg-black text-[5vw] p-3 md:px-4 md:py-3 rounded-md md:text-[2vw] px-8 hover:bg-white text-white hover:text-black" onClick={() => setShowRules((prev) => !prev)}>
           {showRules ? "Hide" : "Show"} Rules
         </button>
       </div>
